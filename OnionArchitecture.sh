@@ -32,11 +32,12 @@ dotnet new class -t Shared/ServiceExtension
 mkdir Shared/Services
 cd ../..
 pwd
-# if [ "$2" == "api" ]; then dotnet new webapi -o src/presentation/API; fi
 if [ ! -z "$2"  ]; 
 then 
     if [ "$2" == "api" ]; then dotnet new webapi -o src/presentation/API; fi
     if [ "$2" == "mvc" ]; then dotnet new mvc -o src/presentation/mvc; fi
+    if [ "$2" == "console" ]; then dotnet new console -o src/presentation/console; fi
+    if [ "$2" == "winform" ]; then dotnet new winforms -o src/presentation/winform; fi
 else
     echo por favor asigne que tipo de proyecto es
 fi
